@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>top.imau.microservice</groupId>
+        <artifactId>shadowraze-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../shadowraze-parent</relativePath>
+    </parent>
+
+    <artifactId>shadowraze-test-center</artifactId>
+    <packaging>jar</packaging>
+
+    <description>测试微服务</description>
+    <name>shadowraze-test-center</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>shadowraze-test-center</finalName>
+    </build>
+</project>
