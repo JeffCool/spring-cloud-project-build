@@ -1,0 +1,18 @@
+app-name: test-center
+server-port: 28080
+eureka-defaultZone: http://localhost:10000/eureka/
+#config-profile: dev
+#config-lable: master
+#config-uri: http://localhost:10001/
+spring:
+  application:
+    name: ${app-name}
+
+server:
+  servlet.context-path: /${app-name}
+  port: ${server-port}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${eureka-defaultZone}
