@@ -4,20 +4,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import top.imau.microservice.shadowraze.test.service.TestService;
 
-import java.util.HashMap;
-import java.util.Map;
+import javax.annotation.Resource;
 
 @RestController
-@RequestMapping("users")
+@RequestMapping("tests")
 public class TestController {
 
+    @Resource
+    private TestService testService;
+
     @GetMapping("{id}")
-    public Map<String, Object> testRestful(@PathVariable Long id) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("id", id);
-        map.put("name", "jeff");
-        map.put("gender", "男");
-        return map;
+    public String getTestResult(@PathVariable Long id) {
+
+        return testService.getUserNameById(id);
     }
 }

@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: test
+#  cloud:
+#    config:
+#      uri: ${config-uri}
+#      name: ${app-name}
+#      profile: ${config-profile}
+#      label: ${config-lable}
+

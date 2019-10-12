@@ -17,6 +17,7 @@
         <module>shadowraze-parent</module>
         <module>shadowraze-eureka-server</module>
         <module>shadowraze-test-center</module>
+        <module>shadowraze-user-center</module>
     </modules>
 
     <properties>
