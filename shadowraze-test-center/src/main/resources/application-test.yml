@@ -10,7 +10,7 @@ spring:
     name: ${app-name}
 
 server:
-  servlet.context-path: /${app-name}
+#  servlet.context-path: /${app-name}
   port: ${server-port}
 
 eureka:

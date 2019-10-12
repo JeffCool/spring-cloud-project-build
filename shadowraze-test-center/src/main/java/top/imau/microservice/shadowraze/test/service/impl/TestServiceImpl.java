@@ -15,7 +15,7 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public String getUserNameById(Long id) {
-        ResponseEntity<String> responseEntity =  restTemplate.getForEntity("http://USER-CENTER/users/" + id, String.class);
+        ResponseEntity<String> responseEntity =  restTemplate.getForEntity("http://USER-CENTER:28080/users/{id}", String.class, id);
 
         return responseEntity.getBody();
     }
