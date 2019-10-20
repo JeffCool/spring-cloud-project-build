@@ -1,0 +1,15 @@
+server:
+  port: 10002
+
+other-eureka-server: http://eureka-peer-1:10001/eureka/, http://eureka-peer-3:10003/eureka/
+
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    appname: ${spring.application.name}
+    hostname: eureka-peer-2
+    prefer-ip-address: false
+  client:
+    service-url:
+      defaultZone: ${other-eureka-server}
