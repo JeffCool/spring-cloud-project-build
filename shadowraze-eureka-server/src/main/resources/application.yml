@@ -1,16 +1,7 @@
+#默认配置文件使用测试环境
 spring:
+  profiles:
+    active: test
   application:
-    name: eureka-server
-server:
-  port: 10000
+    name: shadowraze-eureka-server
 
-eureka:
-#  server:
-#    enableSelfPreservation: false
-  instance:
-    hostname: 127.0.0.1
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

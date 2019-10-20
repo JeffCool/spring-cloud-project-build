@@ -1,0 +1,27 @@
+#默认非集群模式启动
+spring:
+  application:
+    name: shadowraze-eureka-server-test
+#默认端口
+server:
+  port: 8761
+
+eureka:
+  server:
+    #默认开启自我保护
+    enable-self-preservation: true
+  instance:
+    appname: ${spring.application.name}
+    hostname: eureka-server-test
+    #使用ip显示, 默认false
+    prefer-ip-address: false
+    #服务续约任务执行时间间隔（默认服务每30s向eureka发送心跳）
+    lease-renewal-interval-in-seconds: 30
+    #服务失效时间（默认失效90s的服务将剔除）
+    lease-expiration-duration-in-seconds: 90
+  client:
+    #注册本身（默认注册）
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
