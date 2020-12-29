@@ -18,6 +18,7 @@
         <module>shadowraze-eureka-server</module>
         <module>shadowraze-test-center</module>
         <module>shadowraze-user-center</module>
+        <module>shadowraze-gateway-server</module>
     </modules>
 
     <properties>

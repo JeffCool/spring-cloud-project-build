@@ -1,0 +1,30 @@
+server-port: 8080
+eureka-defaultZone: http://localhost:10000/eureka/
+#config-profile: dev
+#config-lable: master
+#config-uri: http://localhost:10001/
+debug: true
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG
+server:
+  #  servlet.context-path: /${app-name}
+  port: ${server-port}
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: after_route
+          #lb表示从注册中心获取服务
+          uri: lb://test-center
+          predicates:
+            - Path=/tests/**
+eureka:
+  client:
+    service-url:
+      defaultZone: ${eureka-defaultZone}
+
+
